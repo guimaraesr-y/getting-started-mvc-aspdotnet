@@ -1,0 +1,52 @@
+﻿@model LearningWebDatabase.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nasc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nasc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Idade) anos
+        </dd>
+
+@if(Model.Carros is not null) 
+{
+    @foreach(var carro in Model.Carros) 
+    {
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => carro.placa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => carro.Marca)
+            @Html.DisplayFor(model => carro.Modelo)
+            @Html.DisplayFor(model => carro.Ano)
+        </dd>
+    }
+}
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

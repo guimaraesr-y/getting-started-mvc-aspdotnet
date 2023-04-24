@@ -1,0 +1,8 @@
+﻿body {
+}
+
+.box-controllers {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}

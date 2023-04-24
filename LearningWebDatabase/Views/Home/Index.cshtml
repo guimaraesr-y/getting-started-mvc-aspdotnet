@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Bem vindo ao sistema de gerenciamento de veículos! Cadastre pessoas e veículos abaixo.</p>
+
+    <div class="box-controllers">
+        <a asp-controller="Pessoas" asp-action="Index">
+            <i class="fa-solid fa-user fa-beat fa-xl"></i>
+            <p>Gerenciar Pessoas</p>
+            @*@Html.ActionLink("Gerenciar Pessoas", "Index", "Pessoas")*@
+        </a>    
+        <a asp-controller="Carros" asp-action="Index">
+            <i class="fa-solid fa-car fa-beat fa-xl"></i>
+            <p>Gerenciar Carros</p>
+            @*@Html.ActionLink("Gerenciar Carros", "Index", "Carros")*@
+        </a>
+    </div>
+</div>
